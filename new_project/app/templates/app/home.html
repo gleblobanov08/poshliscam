@@ -4,7 +4,7 @@
 
 <form method="GET" action="{% url 'home' %}" class="search">
     <div class="input">
-    <input type="text" name="q" placeholder="Search Bins..." value="{{q}}"/>
+    <input type="text" name="q" placeholder="Search for bins..." value="{{q}}"/>
     {% if q != "" %}
         <a href="{% url 'home' %}">X</a>
     {% endif %}
@@ -38,18 +38,22 @@
                                 {% csrf_token %}
                                 <button type="submit" name="bin_id" value="{{bin.id}}" class="like-btn">
                                     <i class="fa fa-heart"></i>
-                                </button> {{bin.total_likes}}
+                                </button>
+                                <span style="font-size: 22px; vertical-align: middle;">{{bin.total_likes}}</span>
                             </form>
                         {% else %}
                             <form action="{% url 'like_bin' bin.id %}" method="POST">
                                 {% csrf_token %}
                                 <button type="submit" name="bin_id" value="{{bin.id}}" class="like-btn">
                                     <i class="fa fa-heart active"></i>
-                                </button> {{bin.total_likes}}
+                                </button>
+                                <span style="font-size: 22px; vertical-align: middle;">{{bin.total_likes}}</span>
                             </form>
                         {% endif %}
                     {% else %}
-                        <i class="fa fa-heart active" style="margin: 0 auto 30px;"></i> {{bin.total_likes}}<br>
+                        <i class="fa fa-heart active" style="margin: auto 30px;"></i>
+                        <span style="font-size: 22px; vertical-align: middle;">{{bin.total_likes}}</span>
+                        <br/>
                     {% endif %}
                 {% endif %}
                 {% if request.user == bin.host %}

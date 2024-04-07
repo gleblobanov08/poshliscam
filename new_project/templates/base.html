@@ -22,16 +22,6 @@
             </div>
         </header>
         <main>
-            <!--
-            {% if messages %}
-            <ul class="messages">
-                {% for message in messages %}
-                <li>{{message}}</li>
-                {% endfor %}
-            </ul>
-            {% endif %}
-            -->
-
             <div class="container">
                 {% block content %}
                 {% endblock %}
@@ -42,5 +32,47 @@
         </footer>
     </div>
     <script src="{% static 'styles/script.js' %}"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            $('#toggle-password').click(function() {
+                var passwordField = $('#password-field');
+                var icon = $(this);
+        
+        // Toggle password visibility
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    passwordField.attr('type', 'password');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+            $('#icon1').click(function() {
+                var passwordField = $('#password1');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    passwordField.attr('type', 'password');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+            $('#icon2').click(function() {
+                var passwordField = $('#password2');
+                var icon = $(this);
+
+                if (passwordField.attr('type') === 'password') {
+                    passwordField.attr('type', 'text');
+                    icon.removeClass('fa-eye-slash').addClass('fa-eye');
+                } else {
+                    passwordField.attr('type', 'password');
+                    icon.removeClass('fa-eye').addClass('fa-eye-slash');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

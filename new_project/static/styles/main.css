@@ -72,19 +72,36 @@ i.fa-heart {
 .search {
     margin: 15px auto 25px;
     padding: 20px;
-    input {
-    padding: 10px;
-    border: 1px dotted #000;
-    width: 25%;
-    font-size: 1rem;
+    display: flex;
+    justify-content: center;
+    .input {
+        margin: 0 10px;    
+        padding: 10px 15px;
+        border: 1px dotted #000;
+        border-radius: 5px;
+        width: 25%;
+        display: flex;
+        justify-content: space-between;
+        font-size: 1rem;
+        background-color: #fff;
+        input {
+            border: none;
+            outline: none;
+            width: 85%;
+            font-size: 1rem;
+        }
+        a {
+            align-self: center;
+            font-family: sans-serif;
+        }
     } button {
         background: gray;
         border: none;
         border-radius: 50%;
-        width: 44px;
-        height: 44px;
+        width: 46px;
+        height: 46px;
         i {
-            font-size: 18px;
+            font-size: 20px;
         }
     }
 }
@@ -92,6 +109,7 @@ i.fa-heart {
 .form {
     margin: 0 auto;
     border: 1px solid black;
+    border-radius: 5px;
     width: 40%;
     font-size: 24px;
 }
@@ -106,11 +124,30 @@ i.fa-heart {
     color: #000;
 }
 
-.login-box input {
-    margin: 15px;
-    padding: 12px 20px;
-    width: 70%;
-    font-size: 16px;
+.login-box {
+    margin: 15px auto;
+    padding: 12px 10px;
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 5px;
+    .full-input {
+        border: none;
+        outline: none;
+        width: 100%;
+        font-size: 16px;
+    } .half-input {
+        border: none;
+        outline: none;
+        width: 85%;
+        font-size: 16px;
+    } textarea {
+        padding: 0 10px;
+    } i {
+        cursor: pointer;
+    }
 }
 
 textarea {
